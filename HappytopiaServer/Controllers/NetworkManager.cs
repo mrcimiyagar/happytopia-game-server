@@ -17,12 +17,23 @@ namespace Midopia.HappytopiaServer.Controllers
 
         private int sessionCounter = 0;
 
+        private List<Session> activeSessions;
+
+        public int SessionsCount
+        {
+            get
+            {
+                return this.activeSessions.Count;
+            }
+        }
+
         public NetworkManager()
         {
+            this.activeSessions = new List<Session>();
             new Thread(connect).Start();
         }
 
-        public void connect()
+        private void connect()
         {
             IPEndPoint ip = new IPEndPoint(IPAddress.Parse(serverIp), 7070);
 
@@ -39,6 +50,11 @@ namespace Midopia.HappytopiaServer.Controllers
 
                 Session session = new Session(sessionCounter++, clientSocket);
             }
+        }
+
+        public void RemoveSession(Session session)
+        {
+            this.activeSessions.Remove(session);
         }
     }
 }
