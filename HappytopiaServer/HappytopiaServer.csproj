@@ -42,7 +42,7 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Excel">
-      <HintPath>E:\desktop\New folder\Midopia\Midopia\bin\Debug\Excel.dll</HintPath>
+      <HintPath>.\Excel.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -98,7 +98,8 @@
     <Compile Include="Functions\Main\FetchMyUserInfo.cs" />
     <Compile Include="Functions\Main\FetchTopPlaneUsers.cs" />
     <Compile Include="Functions\Main\GetHomeViewsCosts.cs" />
-    <Compile Include="Functions\Main\GetSpecialOfferTimes.cs" />
+    <Compile Include="Functions\Main\GetSpecialOffersInts.cs" />
+    <Compile Include="Functions\Main\GetSpecialOffersData.cs" />
     <Compile Include="Functions\Main\Login.cs" />
     <Compile Include="Functions\Main\Logout.cs" />
     <Compile Include="Functions\Main\OnAdWatched.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Functions\Main\OnNewPlaneRecord.cs" />
     <Compile Include="Functions\Main\OnPlaneCatchCoin.cs" />
     <Compile Include="Functions\Main\OnPlaneGameStarted.cs" />
+    <Compile Include="Functions\Main\OnSpecialOfferCaught.cs" />
     <Compile Include="Functions\Main\OnStoneCollected.cs" />
     <Compile Include="Functions\Main\OnTrashCollected.cs" />
     <Compile Include="Functions\Main\Register.cs" />

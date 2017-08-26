@@ -28,7 +28,7 @@ namespace Midopia.HappytopiaServer.Controllers
         // flowerbox :
 
         public static int[] HomeViewsCosts = new int[] { 5, 10, 300, 1000, 50, 10000, 3000, 1000000, 1000000, 30000, 1000000, 1000000, 1000000 };
-
+        public static int[] SpecialOffersInts = new int[] { 50, 100, 150, 200, 250, 300, 350, 400, 450, 500 };
         public static int[] SpecialOfferTimes = new int[] { 50, 13 };
 
         private string usersDBPath = @"UsersDB";

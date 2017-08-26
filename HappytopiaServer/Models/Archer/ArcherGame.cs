@@ -58,7 +58,7 @@ namespace Midopia.HappytopiaServer.Models.Archer
 
             ArcherUser userInfo = Program.DatabaseManager.getArcherUserInfo(user.Id);
 
-            if (userInfo.XP >= StartXpNeed[user.ArcherLevel])
+            if (userInfo.XP >= StartXpNeed[user.ArcherLevel - 1])
             {
                 Program.DatabaseManager.increaseArcherUserLevel(user.Id);
                 user.ArcherLevel++;
@@ -78,7 +78,7 @@ namespace Midopia.HappytopiaServer.Models.Archer
 
             ArcherUser userInfo = Program.DatabaseManager.getArcherUserInfo(user.Id);
 
-            if (userInfo.XP >= StartXpNeed[user.ArcherLevel])
+            if (userInfo.XP >= StartXpNeed[user.ArcherLevel - 1])
             {
                 Program.DatabaseManager.increaseArcherUserLevel(user.Id);
                 user.ArcherLevel++;

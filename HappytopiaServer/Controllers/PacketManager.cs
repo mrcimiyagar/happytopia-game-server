@@ -40,7 +40,8 @@ namespace Midopia.HappytopiaServer.Controllers
             this.functionsDic.Add("buy_nava", new BuyNava());
             this.functionsDic.Add("get_game_version", new FetchGameVersion());
             this.functionsDic.Add("get_home_views_costs", new GetHomeViewsCosts());
-            this.functionsDic.Add("get_special_offer_times", new GetSpecialOfferTimes());
+            this.functionsDic.Add("get_special_offers_data", new GetSpecialOffersData());
+            this.functionsDic.Add("on_special_offer_caught", new OnSpecialOfferCaught());
             
             this.functionsDic.Add("archer_start_game", new ArcherStartGame());
             this.functionsDic.Add("archer_end_game", new ArcherEndGame());

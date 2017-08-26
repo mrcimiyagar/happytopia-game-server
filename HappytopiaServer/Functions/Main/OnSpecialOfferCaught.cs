@@ -1,20 +1,24 @@
-﻿using Midopia.HappytopiaServer.Controllers;
-using Midopia.HappytopiaServer.Models;
+﻿using Midopia.HappytopiaServer.Functions.Main;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Midopia.HappytopiaServer.Models;
+using Midopia.HappytopiaServer;
 
 namespace Midopia.HappytopiaServer.Functions.Main
 {
-    public class GetSpecialOfferTimes : BaseFunc
+    public class OnSpecialOfferCaught : BaseFunc
     {
         public override void process(Session session, long packetCode, string[] args)
         {
             if (session.User != null)
             {
-                session.sendPacket("answer", packetCode, new string[] { DatabaseManager.SpecialOfferTimes[0].ToString(), DatabaseManager.SpecialOfferTimes[1].ToString() });
+                int coin = Convert.ToInt32(args[0]);
+
+                Program.DatabaseManager.increaseUserCoin(session.User.Id, coin);
+                session.User.Coin += coin;
             }
         }
     }
