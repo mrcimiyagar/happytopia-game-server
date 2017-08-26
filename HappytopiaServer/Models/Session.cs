@@ -330,6 +330,12 @@ namespace Midopia.HappytopiaServer.Models
                                 this.readerThread = null;
                             }
                             catch (Exception ignored) { Console.WriteLine(ignored.ToString()); }
+
+                            try
+                            {
+                                Program.NetworkManager.RemoveSession(this);
+                            }
+                            catch (Exception) { }
                         }
                     }));
                 }
