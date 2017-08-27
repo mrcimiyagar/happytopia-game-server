@@ -25,6 +25,9 @@ namespace Midopia.HappytopiaServer
         private static PacketManager packetManager;
         public static PacketManager PacketManager { get { return packetManager; } set { packetManager = value; } }
 
+        private static TGBotManager tgBotManager;
+        public static TGBotManager TGBotManager { get { return tgBotManager; } set { tgBotManager = value; } }
+
         private static NetworkManager netManager;
         public static NetworkManager NetworkManager { get { return netManager; } set { netManager = value; } }
 
@@ -39,6 +42,7 @@ namespace Midopia.HappytopiaServer
             gameManager = new GameManager();
             sharingManager = new SharingManager();
             packetManager = new PacketManager();
+            tgBotManager = new TGBotManager();
             netManager = new NetworkManager();
 
             Console.WriteLine("server started.");

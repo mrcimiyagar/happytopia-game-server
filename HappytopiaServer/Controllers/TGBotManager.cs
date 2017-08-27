@@ -28,9 +28,11 @@ namespace Midopia.HappytopiaServer.Controllers
 
         public TGBotManager()
         {
-            bot = new TelegramBotClient("");
+            bot = new TelegramBotClient("431189419:AAH8E6Q5w7KQ0OEwVhf6Orj5sux1XITNCpE");
             bot.OnUpdate += this.OnUpdate;
             bot.StartReceiving();
+
+            Console.WriteLine("Happytopia server telegram gate connected.");
         }
 
         private void OnUpdate(object sender, UpdateEventArgs uea)
@@ -80,7 +82,6 @@ namespace Midopia.HappytopiaServer.Controllers
                                         }
                                     }
 
-                                    bot.SendTextMessageAsync(uea.Update.Message.Chat.Id, "There are " + Program.NetworkManager.SessionsCount + " online users.");
                                     return;
                                 }
                                 else if (uea.Update.Message.Text.StartsWith("/award_coin "))
