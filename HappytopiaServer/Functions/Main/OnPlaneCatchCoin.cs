@@ -14,7 +14,7 @@ namespace Midopia.HappytopiaServer.Functions.Main
             if (session.User != null)
             {
                 Program.DatabaseManager.increaseUserCoin(session.User.Id, 1 * session.User.StarsCount);
-                session.User.Coin += 1 * session.User.StarsCount;
+                session.User.Coin += 10 * session.User.StarsCount;
 
                 session.sendPacket("answer", packetCode, new string[0]);
             }

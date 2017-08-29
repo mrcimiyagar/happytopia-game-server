@@ -27,7 +27,7 @@ namespace Midopia.HappytopiaServer.Controllers
         // garden : 
         // flowerbox :
 
-        public static int[] HomeViewsCosts = new int[] { 5, 10, 300, 1000, 50, 10000, 3000, 1000000, 1000000, 30000, 1000000, 1000000, 1000000 };
+        public static int[] HomeViewsCosts = new int[] { 5, 10, 300, 1000, 50, 10000, 3000, 60000, 1000000, 30000, 1000000, 1000000, 1000000 };
         public static int[] SpecialOffersInts = new int[] { 50, 100, 150, 200, 250, 300, 350, 400, 450, 500 };
         public static int[] SpecialOfferTimes = new int[] { 50, 13 };
 
@@ -106,7 +106,7 @@ namespace Midopia.HappytopiaServer.Controllers
             int id = -1;
             lock (usersDBCon)
             {
-                SQLiteCommand command1 = new SQLiteCommand("insert into Users (email, password, name, coin, gem, plane_record, archer_level, shootball_level) values ('not_set', '" + password + "', '" + name + "', 60000, 60000, 0, 1, 1);", usersDBCon);
+                SQLiteCommand command1 = new SQLiteCommand("insert into Users (email, password, name, coin, gem, plane_record, archer_level, shootball_level) values ('not_set', '" + password + "', '" + name + "', 50, 0, 0, 1, 1);", usersDBCon);
                 command1.ExecuteNonQuery();
                 SQLiteCommand command2 = new SQLiteCommand("select last_insert_rowid()", usersDBCon);
                 id = Convert.ToInt32(command2.ExecuteScalar());
@@ -121,8 +121,8 @@ namespace Midopia.HappytopiaServer.Controllers
             command4.ExecuteNonQuery();
             User user = new User(id, "not_set", password, name);
             user.Navas[0] = true;
-            user.Coin = 60000;
-            user.Gem = 60000;
+            user.Coin = 50;
+            user.Gem = 0;
             return user;
         }
 

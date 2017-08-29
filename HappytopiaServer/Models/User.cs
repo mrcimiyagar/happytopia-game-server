@@ -63,13 +63,11 @@ namespace Midopia.HappytopiaServer.Models
                     }
                 }
 
-                if (count <= 2) return 1;
-                else if (count <= 4) return 2;
-                else if (count <= 6) return 3;
-                else if (count <= 7) return 5;
-                else if (count <= 8) return 8;
-
-                return 1;
+                if (count >= 9) return 8;
+                else if (count >= 7) return 5;
+                else if (count >= 6) return 3;
+                else if (count >= 4) return 2;
+                else return 1;
             }
         }
 

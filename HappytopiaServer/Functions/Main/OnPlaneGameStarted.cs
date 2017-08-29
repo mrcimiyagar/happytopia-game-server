@@ -15,7 +15,7 @@ namespace Midopia.HappytopiaServer.Functions.Main
             if (session.User != null)
             {
                 Program.DatabaseManager.decreaseUserCoin(session.User.Id, 3);
-                session.User.Coin -= 3;
+                session.User.Coin -= 20;
 
                 session.sendPacket("answer", packetCode, new string[0]);
             }

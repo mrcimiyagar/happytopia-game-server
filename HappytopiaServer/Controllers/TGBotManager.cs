@@ -25,7 +25,6 @@ namespace Midopia.HappytopiaServer.Controllers
             "Aras_mehranfar"
         };
         
-
         public TGBotManager()
         {
             bot = new TelegramBotClient("431189419:AAH8E6Q5w7KQ0OEwVhf6Orj5sux1XITNCpE");

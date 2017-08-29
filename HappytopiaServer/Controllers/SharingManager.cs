@@ -36,15 +36,20 @@ namespace Midopia.HappytopiaServer.Controllers
 
             foreach(User user in usersDic.Values)
             {
-                if (!this.planePlayersRecords.ContainsKey(user.PlaneRecord))
+                if (user.PlaneRecord > 0)
                 {
-                    HashSet<int> subList = new HashSet<int>();
-                    subList.Add(user.Id);
-                    this.planePlayersRecords.Add(user.PlaneRecord, subList);
-                }
-                else
-                {
-                    this.planePlayersRecords[user.PlaneRecord].Add(user.Id);
+                    Console.WriteLine("User Plane Record : " + user.PlaneRecord);
+
+                    if (!this.planePlayersRecords.ContainsKey(user.PlaneRecord))
+                    {
+                        HashSet<int> subList = new HashSet<int>();
+                        subList.Add(user.Id);
+                        this.planePlayersRecords.Add(user.PlaneRecord, subList);
+                    }
+                    else
+                    {
+                        this.planePlayersRecords[user.PlaneRecord].Add(user.Id);
+                    }
                 }
             }
 

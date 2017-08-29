@@ -15,15 +15,16 @@ namespace Midopia.HappytopiaServer.Functions.Archer
         {
             if (session.User != null)
             {
-                string[] result = new string[ArcherGame.StartCoinCost.Length * 5];
+                string[] result = new string[ArcherGame.StartCoinCost.Length * 6];
 
-                for (int counter = 0; counter < result.Length; counter += 5)
+                for (int counter = 0; counter < result.Length; counter += 6)
                 {
-                    result[counter] = ArcherGame.StartXpNeed[counter / 5].ToString();
-                    result[counter + 1] = ArcherGame.StartCoinCost[counter / 5].ToString();
-                    result[counter + 2] = ArcherGame.WinXpPrize[counter / 5].ToString();
-                    result[counter + 3] = ArcherGame.WinCoinPrize[counter / 5].ToString();
-                    result[counter + 4] = ArcherGame.WinGemPrize[counter / 5].ToString();
+                    result[counter] = ArcherGame.StartXpNeed[counter / 6].ToString();
+                    result[counter + 1] = ArcherGame.StartCoinCost[counter / 6].ToString();
+                    result[counter + 2] = ArcherGame.WinXpPrize[counter / 6].ToString();
+                    result[counter + 3] = ArcherGame.WinCoinPrize[counter / 6].ToString();
+                    result[counter + 4] = ArcherGame.WinGemPrize[counter / 6].ToString();
+                    result[counter + 5] = ArcherGame.LooseXpPrize[counter / 6].ToString();
                 }
 
                 session.sendPacket("answer", packetCode, result);

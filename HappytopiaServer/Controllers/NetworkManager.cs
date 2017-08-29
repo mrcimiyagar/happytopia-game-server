@@ -35,7 +35,7 @@ namespace Midopia.HappytopiaServer.Controllers
 
         private void connect()
         {
-            IPEndPoint ip = new IPEndPoint(IPAddress.Parse(serverIp), 7070);
+            IPEndPoint ip = new IPEndPoint(IPAddress.Parse(serverIp), 8080);
 
             Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
@@ -49,6 +49,7 @@ namespace Midopia.HappytopiaServer.Controllers
                 Console.WriteLine("new client connected !");
 
                 Session session = new Session(sessionCounter++, clientSocket);
+                this.activeSessions.Add(session);
             }
         }
 
